@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar -- thin, dark */
+::-webkit-scrollbar        { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: #2a2a2a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
+
+/* Electron drag region for frameless window on macOS */
+.drag-region { -webkit-app-region: drag; }
+.no-drag     { -webkit-app-region: no-drag; }
+
+/* Smooth text rendering */
+* { -webkit-font-smoothing: antialiased; }
+
+/* Prevent text selection on UI chrome */
+.no-select { user-select: none; }
+
+/* Typing dots animation */
+@keyframes bounce-dot {
+  0%, 80%, 100% { transform: translateY(0);    opacity: 0.4; }
+  40%            { transform: translateY(-6px); opacity: 1;   }
+}
+.typing-dot { animation: bounce-dot 1.4s ease-in-out infinite; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Code block syntax colors (minimal) */
+.code-block { font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; }

@@ -1,0 +1,5 @@
+{
+  "model": "mistral",
+  "timeout": 30000,
+  "max_output": 65536
+}
