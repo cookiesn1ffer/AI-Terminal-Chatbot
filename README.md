@@ -1,23 +1,31 @@
-# AI & Terminal Chatbot
+# >\_ AI Terminal Chatbot
 
-Electron + React desktop app combining a streaming AI chat interface with a multi-tab command terminal.
+> Electron + React desktop app combining a streaming AI chat interface with a multi-tab command terminal.
 
-## Requirements
+![Screenshot](screenshot.png)
 
-- Node.js 18+
-- npm
-- [Ollama](https://ollama.com) running locally
+---
+
+## What it does
+
+A native desktop application that merges an AI chat interface with a real terminal — run commands and talk to an AI in the same window, across multiple tabs.
+
+| Feature            | Details                                   |
+| ------------------ | ----------------------------------------- |
+| Streaming AI chat  | Real-time token streaming from AI backend |
+| Multi-tab terminal | Multiple independent terminal sessions    |
+| Unified interface  | Chat and terminal side by side            |
+| Native desktop     | Electron-based, runs on Windows and Linux |
+
+---
+
+## Installation
+
+**Requirements:** Node.js 18+
 
 ```bash
-ollama pull hf.co/mradermacher/mistral-7b-uncensored-GGUF:Q5_K_M
-ollama pull hf.co/MaziyarPanahi/Qwen2.5-7B-Instruct-Uncensored-GGUF:Q5_K_M
-ollama pull hf.co/second-state/Deepseek-Coder-6.7B-Instruct-GGUF:Q5_K_M
-```
-
-## Running in Development
-
-**Terminal 1 — renderer**
-```bash
+git clone https://github.com/cookiesn1ffer/AI-Terminal-Chatbot.git
+cd AI-Terminal-Chatbot
 npm install
 npm start
 ```
@@ -25,29 +33,21 @@ npm start
 ## Build
 
 ```bash
-npm run dist
+npm run build
+# Output: dist/
 ```
 
-Produces a Windows NSIS installer. For Linux, add to `package.json`:
+---
 
-```json
-"linux": { "target": ["AppImage"], "category": "Utility" }
-```
+## Stack
 
-Then: `npm run build && electron-builder --linux`
+- **Electron** — native desktop shell
+- **React** — UI framework
+- **JavaScript** — application logic
 
-> `node-pty` is a native addon — rebuild on the target platform with `npx electron-rebuild`.
+---
 
-## Configuration
+## License
 
-Edit `config/settings.json`:
-
-```json
-{
-  "model": "mistral",
-  "timeout": 30000,
-  "max_output": 65536
-}
-```
-
-Also editable from the Settings modal inside the app.
+Copyright (c) 2026 Aarush (cookiesn1ffer). All rights reserved.
+This software is proprietary. See LICENSE for details.
